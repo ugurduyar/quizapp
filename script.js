@@ -5,7 +5,7 @@ let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
-let availableQuestion = [];
+let availableQuestions = [];
 
 let questions = [
   {
@@ -34,3 +34,16 @@ let questions = [
     answer: 4,
   },
 ];
+
+// Constants
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 3;
+
+startGame = () => {
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions];
+  console.log(availableQuestions);
+};
+
+startGame();
