@@ -2,7 +2,7 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 
 let currentQuestion = {};
-let acceptingAnswers = true;
+let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
@@ -64,7 +64,14 @@ getNewQuestion = () => {
 
 choices.forEach((choice) => {
   choice.addEventListener("click", (e) => {
-    console.log(e.target);
+    if (!acceptingAnswers) return;
+
+    acceptingAnswers = false;
+
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset["number"];
+
+    getNewQuestion();
   });
 });
 
