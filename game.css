@@ -54,3 +54,9 @@
   height: 4rem;
   border: 0.3rem solid blue;
 }
+
+#progressBarFull {
+  height: 3.4rem;
+  background-color: blue;
+  width: 0%;
+}
