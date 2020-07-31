@@ -3,8 +3,8 @@ const saveScoreBtn = document.getElementById("saveScoreBtn");
 const finalScore = document.getElementById("finalScore");
 const mostRecentScore = localStorage.getItem("mostRecentScore");
 
-localStorage.setItem("highScores", JSON.stringify([]));
-console.log(JSON.parse(localStorage.getItem("highScores")));
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+console.log(highScores);
 
 finalScore.innerText = mostRecentScore;
 username.addEventListener("keyup", () => {
