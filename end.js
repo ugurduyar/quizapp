@@ -14,4 +14,8 @@ username.addEventListener("keyup", () => {
 saveHighScore = (e) => {
   console.log("save button");
   e.preventDefault();
+
+  const score = { score: mostRecentScore, name: username.value };
+  highScores.push(score);
+  console.log(score);
 };
