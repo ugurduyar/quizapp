@@ -16,6 +16,10 @@ saveHighScore = (e) => {
   e.preventDefault();
 
   const score = { score: mostRecentScore, name: username.value };
+
   highScores.push(score);
-  console.log(score);
+  highScores.sort((a, b) => {
+    return b.score - a.score;
+  });
+  console.log(highScores);
 };
